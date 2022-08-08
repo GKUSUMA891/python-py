@@ -1,0 +1,46 @@
+#selection
+
+      #if -statement
+age=26
+id=34
+if age!=id:
+    print(" johny age is above 26")
+if age==26:
+    print("age is equal to 26")
+    
+    #if-else statement
+if age<=id:
+    print(" age is lessthan id")
+else:
+    print("age is greaterthan id")
+if age!=30 and id !=34:
+    print("age is equal")
+else:
+    print("age is not equal")
+
+     #if-elif-else statement
+amount=int(input())
+if amount==500:
+    print("amount is equal to 500")
+elif amount!=500:
+    print("amount is not equal to 500")
+elif amount>=500:
+    print("money is greaterthan equal to 500")
+elif amount<=500:
+      print("money is lessthan equal to 500")
+else:
+    print("zero money")
+
+    #nested-if-else statement
+place=input()
+n=len(place)
+print(n)
+proper=10
+if n>proper:
+    if proper==n:
+        print("proper and place are same length")
+    else:
+        print("proper and place are different length")
+else:
+    print("proper and length are not equal")
+
