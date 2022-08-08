@@ -1,0 +1,13 @@
+#sequential
+day=input()
+print("today is " ,day)
+day1=input()
+print("today is " ,day1)
+
+day2=input()
+print("today is " ,day2)
+
+day3=input()
+print("today is " ,day3)
+
+print("days in weeks are:", day ,", " , day1 , " ," , day2 , ", " , day3)
