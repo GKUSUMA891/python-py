@@ -1,0 +1,85 @@
+import uiautomator2 as u2 #import uiautomator package
+import time   #  install time
+class uiautomator:
+    def __init__(self): #constructor declaration
+        print("uiautomator")
+    def contact_save(self):
+        device=u2.connect("emulator-5554")  # get from adb devices
+        print(device.info)
+        device(text="Phone").click()
+        device(text="Create new contact").click()
+        device(text="First name").set_text("a")
+        device(text="Last name").set_text("b")
+        device(text="Phone").set_text("1234512345")
+        device(text="SAVE").click()
+        #device(text="back").click()
+        device.press("Home")
+    def contact_delete(self):
+        device= u2.connect("emulator-5554")  # get from adb devices
+        print(device.info)
+        device(text="Phone").click()
+        device(text="a b").click()
+        device(className="android.widget.ImageButton").click()
+        device(text="Delete").click()
+        device(text="DELETE").click()
+        #device(text="Home").click()
+        #device.press("back")
+        #device.press("back")
+        device.press("Home")
+    def install_app(self): #fun declaration
+        device=u2.connect("emulator-5554") #connection through adb commands
+        device.app_install("C:\\Users\\dell\\Downloads\\amazon-shopping-24-16-2-100.apk") #app installation
+        device.app_install("C:\\Users\\dell\\Downloads\\youtube-17-38-34.apk")
+        device.app_install("C:\\Users\\dell\\Downloads\\snapchat-12-01-0-33.apk")
+        print(device.info)
+    def un_installapp(self):
+        device=u2.connect("emulator-5554") #connection through adb commands
+        device.app_uninstall("com.amazon.mShop.android.shopping")
+        device.app_uninstall("com.google.android.youtube")
+        device.app_uninstall("com.snapchat.android")
+        print(device.info)
+    def application_start(self):
+        device=u2.connect("emulator-5554") #connection through adb commands
+        device.app_start("com.snapchat.android") #app start using package through adb command
+        #time.sleep(10)
+        #device.app_start("com.amazon.mShop.android.shopping")
+        #time.sleep(6)
+        #device.app_start("com.google.android.youtube")
+    def application_stop(self):
+        device = u2.connect("emulator-5554")
+        device.app_start("com.snapchat.android")
+        time.sleep(10)
+        device.app_stop("com.snapchat.android")
+    def applist_running(self):
+        device=u2.connect("emulator-5554")
+        print(device.info)
+        device.app_list_running()
+        print(device.app_info("com.amazon.mShop.android.shopping"))
+        print(device.app_info("com.android.contacts"))
+        print(device.app_info("com.android.gallery3d"))
+        print(device.app_start("com.android.dialer"))
+    def screen_0ff_screen_on(self):
+        device=u2.connect("emulator-5554")
+        print(device.info)
+        device.screen_off()
+        time.sleep(10)
+        device.screen_on()
+        device.press('back')
+    def screen_shot(self):
+        objects = u2.connect("emulator-5554")
+        print(objects.info)
+        objects.screenshot('home.jpg')
+        #objects.app_clear('com.android.contacts.com')
+
+#bellow how to do fun_call
+import libraries #import file name
+v=libraries.uiautomator() #filename.class name assign to a variable
+v.contact_save()        #function call using var 
+
+
+
+
+
+
+
+
